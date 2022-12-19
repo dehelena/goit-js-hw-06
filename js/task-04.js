@@ -8,11 +8,14 @@ let counterValue = 0;
 const decrementBtn = document.querySelector('button[data-action="decrement"]');
 const incrementBtn = document.querySelector('button[data-action="increment"]');
 let valueEl = document.querySelector("#value");
+
 const incrementHandler = () => {
   console.log((counterValue += 1));
+  valueEl.innerHTML = counterValue;
 };
 const decrementHandler = () => {
   console.log((counterValue -= 1));
+  valueEl.innerHTML = counterValue;
 };
 
 decrementBtn.addEventListener("click", decrementHandler);

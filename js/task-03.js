@@ -19,16 +19,17 @@ const images = [
 // Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
 
 const galleryListEl = document.querySelector(".gallery");
+
 let galleryUrlEl = "";
 let galleryAltEl = "";
 
-for (const image of images) {
-  galleryUrlEl = image.url;
-  galleryAltEl = image.alt;
+images.map(({ url, alt }) => {
+  galleryUrlEl = url;
+  galleryAltEl = alt;
   galleryListEl.insertAdjacentHTML(
     "afterbegin",
     `<li><img src='${galleryUrlEl}' alt='${galleryAltEl}' width='1260' height='750'></img></li>`
   );
-}
+});
 
 console.log(galleryListEl);

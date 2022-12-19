@@ -4,14 +4,16 @@
 // Якщо введена правильна кількість символів, то border інпуту стає зеленим, якщо неправильна кількість - червоним.
 // Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
 
-// #validation-input {
-//   border: 3px solid #bdbdbd;
-// }
+const inputEl = document.querySelector("input");
+const inputLength = document.querySelector("[data-length='6']");
 
-// #validation-input.valid {
-//   border-color: #4caf50;
-// }
+const checkValueOnSymbols = () => {
+  if (inputEl.value.length != inputLength.dataset.length) {
+    inputEl.classList.add("invalid");
+  } else {
+    inputEl.classList.remove("invalid");
+    inputEl.classList.add("valid");
+  }
+};
 
-// #validation-input.invalid {
-//   border-color: #f44336;
-// }
+inputEl.addEventListener("blur", checkValueOnSymbols);
