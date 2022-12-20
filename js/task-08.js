@@ -16,9 +16,14 @@ function onFormSubmit(event) {
     elements: { email, password },
   } = event.currentTarget;
 
+  const formDataObj = {
+    email: email.value,
+    password: password.value,
+  };
+
   email.value === "" || password.value === ""
     ? alert("All fields must be filled")
-    : console.log(`Email: ${email.value}, password: ${password.value}`);
+    : console.log(formDataObj);
 
   event.currentTarget.reset();
 }
