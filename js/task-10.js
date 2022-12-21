@@ -21,17 +21,15 @@ const divForBoxes = document.querySelector("#boxes");
 
 createBtn.addEventListener("click", createBoxes);
 
-// function createBoxes() {
-//   if (createBtn) {
-//     for (let i = 1; i <= inputEl.value; i += 1) {
-//       let newDiv = document.createElement("div");
-//       newDiv.style.width = "30px";
-//       newDiv.style.height = "30px";
-//       newDiv.style.backgroundColor = getRandomHexColor();
-//       divForBoxes.append(newDiv);
-//       console.log(divForBoxes);
-//     }
-//   }
-// }
-
-function createBoxes() {}
+function createBoxes() {
+  if (createBtn) {
+    for (let i = 1; i <= inputEl.value; i += 1) {
+      let newDiv = document.createElement("div");
+      newDiv.style.width = "30px";
+      newDiv.style.height = "30px";
+      newDiv.style.backgroundColor = getRandomHexColor();
+      divForBoxes.append(newDiv);
+      console.log(divForBoxes);
+    }
+  }
+}

@@ -20,11 +20,13 @@ const images = [
 
 const galleryListEl = document.querySelector(".gallery");
 
-const markup = images.map(({ url, alt }) => {
-  galleryListEl.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src='${url}' alt='${alt}' width='1260' height='750'></img></li>`
-  );
-});
+const markup = images
+  .map(
+    ({ url, alt }) =>
+      `<li><img src='${url}' alt='${alt}' width='1260' height='750'></img></li>`
+  )
+  .join("");
+
+galleryListEl.insertAdjacentHTML("afterbegin", markup);
 
 console.log(galleryListEl);
