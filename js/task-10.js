@@ -20,16 +20,22 @@ const destroyBtn = document.querySelector("[data-destroy]");
 const divForBoxes = document.querySelector("#boxes");
 
 createBtn.addEventListener("click", createBoxes);
+destroyBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes() {
-  if (createBtn) {
-    for (let i = 1; i <= inputEl.value; i += 1) {
-      let newDiv = document.createElement("div");
-      newDiv.style.width = "30px";
-      newDiv.style.height = "30px";
-      newDiv.style.backgroundColor = getRandomHexColor();
-      divForBoxes.append(newDiv);
-      console.log(divForBoxes);
-    }
+  let amount = Number(inputEl.value);
+  let sizes = 30;
+
+  for (let i = 1; i <= amount; i += 1) {
+    let newDiv = document.createElement("div");
+    newDiv.style.width = `${sizes}px`;
+    newDiv.style.height = `${sizes}px`;
+    newDiv.style.backgroundColor = getRandomHexColor();
+    divForBoxes.append(newDiv);
+    sizes += 10;
   }
+}
+
+function destroyBoxes() {
+  divForBoxes.innerHTML = "";
 }
